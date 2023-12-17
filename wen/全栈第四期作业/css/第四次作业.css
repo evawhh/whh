@@ -1,22 +1,7 @@
-html{
-    overflow-y: scroll;
-}
-:root {
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-:root body {
-    position: absolute;
-}
-body {
-    width: 100vm;
-}
 *{
-    margin:0;
+    margin:0 auto;
     padding:0;
     background: #f8f8f8;
-    margin-left: auto;
-    margin-right: auto;
 }
 .header {
     width: 1920px;
@@ -291,18 +276,23 @@ button {
 }
 .more {
     position: absolute;
+    width: 300px;
+    height: 70px;
     margin-top: 910px;
-    margin-left: 380px;
-    z-index: 4;
-}
-.more1 {
-    position: absolute;
-    margin-top: 910px;
-    margin-left: 380px;
-    z-index: 3;
-}
+    margin-left: 420px;
+    border: 2px  solid rgb(25, 55, 21);
+    color: rgb(25, 55, 21);
+    background-color: transparent;
+    font-family:微软雅黑;
+    font-size: 40px;
+    text-align: center;
+    line-height: 70px;
+    transition: all 2s;
+    z-index: 9;
+} 
 .more:hover {
-    display: none;  
+    background-color: rgb(25, 55, 21);
+    color: azure;
 }
 .bodyer2 {
     position: relative;
