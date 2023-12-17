@@ -159,22 +159,64 @@ body {
 .pra3 {
     position: relative;
 }
-.d1 {
-    position: relative;
-    top: 390px;
-    left: -20px;
-    width: 270px;
-    height: 60px;
-    font: 400 48px "微软雅黑";
-    text-align: center;
-    background-color: transparent;
-    color: #3b3f17;
-    border: 9px solid transparent;
-    z-index: 9;
+button {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1px;
+  padding: 10px 20px;
+  color: #2a3f17;
+  font: 400 48px "微软雅黑";
+  position: relative;
+  vertical-align: middle;
+  top: 380px;
+  left: 420px;
+  z-index: 9;
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
-.d1:hover {
-    animation: kuang 6s;
-    animation-fill-mode: forwards;
+.d1 {
+  transition: color 0.25s; 
+  &::before,
+  &::after {
+    border: 9px solid transparent;
+    width: 0;
+    height: 0; /*边框不可见 */
+  }
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover::before {
+    border-top-color: #2a3f17; 
+    border-right-color:#2a3f17;
+    transition:
+      width 0.25s ease-out, 
+      height 0.25s ease-out 0.25s; 
+  }
+  &:hover::after {
+    border-bottom-color: #2a3f17; 
+    border-left-color:#2a3f17;
+    transition:
+      border-color 0s ease-out 0.5s, 
+      width 0.25s ease-out 0.5s,
+      height 0.25s ease-out 0.75s; 
+  }
 }
 .t1 {
     position: absolute;
@@ -465,6 +507,7 @@ body {
 .big:hover {
     animation: lv 4s;
     animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 } 
 @keyframes xiangs {
     from {margin-top: 0px;}
@@ -482,10 +525,4 @@ body {
 @keyframes lv {
     50% {margin-top: -30px;}
     100% {margin-top: -50px;background: url("../images4/BigWorld1.png");}
-}
-@keyframes kuang {
-    0% {border-top: 9px solid;}
-    25% {border-top: 9px solid;border-right: 9px solid;}
-    75% {border-top: 9px solid;border-right: 9px solid;border-bottom: 9px solid;}
-    100% {border-top: 9px solid;border-right: 9px solid;border-bottom: 9px solid;border-left: 9px solid;} 
 }
